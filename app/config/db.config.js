@@ -20,5 +20,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.user = require('../model/user.model.js')(sequelize, Sequelize);
+db.news = require('../model/news.model.js')(sequelize, Sequelize);
+db.candidatePoliticalCareer = require('../model/candidate_political_career.model.js')(sequelize, Sequelize);
 
 module.exports = db;
