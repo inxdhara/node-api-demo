@@ -4,6 +4,7 @@ const userController = require('../controller/user.controller.js');
 const newsController = require('../controller/news.controller.js');
 const authController = require('../controller/auth.controller.js');
 const CandidatePoliticalCareerController = require('../controller/candidate_political_career.controller');
+const Event = require('../controller/event.controller');
 
 module.exports = function(app) {
 	// Register user
@@ -26,4 +27,7 @@ module.exports = function(app) {
 
 	// Get candidate_political_career detail data
 	app.post('/api/candidate/social-activities', [authJwt.verifyToken], CandidatePoliticalCareerController.candidatePoliticalCareerContent);
+
+	// Get candidate_political_career detail data
+	app.post('/api/event-listing', [authJwt.verifyToken], Event.newsContent);
 }
